@@ -1,144 +1,537 @@
 <!DOCTYPE html>
+
+<!-- Informa ao navegador que este documento utiliza HTML5 -->
+
 <html lang="pt-br">
+<!-- Define que o idioma principal da página é o português do Brasil -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechStore</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Início das configurações que não aparecem diretamente na página -->
+
+<meta charset="UTF-8">
+<!-- Permite a utilização correta de caracteres especiais, como ç e acentos -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Faz a página se adaptar corretamente a celulares, tablets e computadores -->
+
+<title>TechStore | Informática e Eletrônicos</title>
+<!-- Define o nome que aparecerá na aba do navegador -->
+
+<link rel="stylesheet" href="style.css">
+<!-- Conecta este arquivo HTML ao arquivo de estilos chamado style.css -->
+
 </head>
+
 <body>
+<!-- Início de todo o conteúdo visível da página -->
 
-    <!-- ============================================================ -->
-    <!-- CABEÇALHO / BANNER                                            -->
-    <!-- Espaço em branco para inserir a imagem do banner.            -->
-    <!-- ============================================================ -->
-    <table border="1" width="100%" cellpadding="12">
-        <tr>
-            <td align="center">
+<!-- ========================================================= -->
+<!-- CABEÇALHO PRINCIPAL                                       -->
+<!-- ========================================================= -->
 
-                <!-- Coloque aqui a imagem do banner (ex.: img/banner.jpg) -->
+<header class="topo">
+    <!-- Cria a área superior fixa visualmente organizada da loja -->
 
-                <img src="banner.png" alt="Banner da TechStore" width="100%">
+    <div class="logo">
+        <!-- Agrupa o ícone e o nome da empresa -->
 
-                <h1>TechStore</h1>
-                <p>Informática e Eletrônicos</p>
-            </td>
-        </tr>
-    </table>
+        <div class="logo-icone">🛒</div>
+        <!-- Exibe um ícone representando uma loja virtual -->
+
+        <div>
+            <!-- Agrupa os textos da marca -->
+
+            <h1>TECH<span>STORE</span></h1>
+            <!-- Nome principal da loja; a palavra STORE receberá destaque pelo CSS -->
+
+            <p>INFORMÁTICA E ELETRÔNICOS</p>
+            <!-- Subtítulo da empresa -->
+
+        </div>
+
+    </div>
+
+    <nav class="menu">
+        <!-- Cria o menu principal de navegação -->
+
+        <a href="#inicio">Início</a>
+        <!-- Link que leva o usuário para o início da página -->
+
+        <a href="#produtos">Produtos</a>
+        <!-- Link que leva o usuário para a seção de produtos -->
+
+        <a href="#sobre">Sobre</a>
+        <!-- Link que leva o usuário para a seção sobre a empresa -->
+
+        <a href="#contato">Contato</a>
+        <!-- Link que leva o usuário para a seção de contato -->
+
+    </nav>
+
+    <a class="whatsapp-topo" href="https://wa.me/5543999259899" target="_blank">
+        <!-- Cria um botão que abre uma conversa no WhatsApp -->
+
+        💬 (43) 99925-9899
+        <!-- Número de contato exibido ao visitante -->
+
+    </a>
+
+</header>
 
 
-    <!-- ============================================================ -->
-    <!-- MENU DE NAVEGAÇÃO                                             -->
-    <!-- ============================================================ -->
-    <table border="1" width="100%" cellpadding="8">
-        <tr>
-            <td align="center">
-                <a href="index.html">Início</a> |
-                <a href="produtos.html">Produtos</a> |
-                <a href="#sobre">Sobre</a> |
-                <a href="#contato">Contato</a>
-            </td>
-        </tr>
-    </table>
+<!-- ========================================================= -->
+<!-- BANNER PRINCIPAL / HERO                                   -->
+<!-- ========================================================= -->
+
+<main id="inicio">
+    <!-- Define o conteúdo principal e cria o destino do link Início -->
+
+    <section class="hero">
+        <!-- Cria a grande área de apresentação da loja -->
+
+        <div class="hero-texto">
+            <!-- Agrupa todos os textos do banner principal -->
+
+            <p class="hero-destaque">TECNOLOGIA</p>
+            <!-- Pequeno texto de destaque acima do título -->
+
+            <h2>
+                QUE TRANSFORMA<br>
+                <span>SEU DIA A DIA</span>
+            </h2>
+            <!-- Título principal dividido em linhas para criar maior impacto visual -->
+
+            <p class="hero-descricao">
+                Os melhores produtos de informática e eletrônicos
+                você encontra aqui na TechStore!
+            </p>
+            <!-- Texto explicando rapidamente a proposta da loja -->
+
+            <a href="#produtos" class="botao-principal">
+                🛍 Ver Produtos
+            </a>
+            <!-- Botão que leva diretamente para os produtos -->
+
+        </div>
 
 
-    <!-- ============================================================ -->
-    <!-- PRODUTOS                                                      -->
-    <!-- Tabela com imagens e textos. Cada célula tem um espaço em    -->
-    <!-- branco para a imagem do eletrônico.                          -->
-    <!-- ============================================================ -->
-    <h2 id="produtos">Nossos Produtos</h2>
+        <div class="hero-imagem">
+            <!-- Área reservada para a imagem principal do banner -->
 
-    <table border="1" width="100%" cellpadding="12">
+            <img src="banner.png" alt="Produtos de informática TechStore">
+            <!-- Exibe a imagem principal; você pode trocar banner.png por outra imagem futuramente -->
 
-        <!-- LINHA 1 -->
-        <tr>
-            <td align="center" width="33%">
+        </div>
 
-                <br>
-                <img src="notebookgamer.png" alt="Notebook Gamer" width="150" height="150">
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- DIFERENCIAIS DA LOJA                                  -->
+    <!-- ===================================================== -->
+
+    <section class="beneficios">
+        <!-- Cria uma faixa com os principais benefícios oferecidos pela loja -->
+
+        <article class="beneficio">
+            <!-- Primeiro benefício -->
+
+            <div class="beneficio-icone">🛡️</div>
+            <!-- Ícone representando segurança -->
+
+            <div>
+                <h3>Compra Segura</h3>
+                <!-- Título do benefício -->
+
+                <p>Seus dados protegidos com segurança.</p>
+                <!-- Explicação do benefício -->
+
+            </div>
+
+        </article>
+
+
+        <article class="beneficio">
+            <!-- Segundo benefício -->
+
+            <div class="beneficio-icone">🚚</div>
+            <!-- Ícone representando entrega -->
+
+            <div>
+                <h3>Entrega Rápida</h3>
+                <!-- Título do benefício -->
+
+                <p>Enviamos seus produtos com rapidez.</p>
+                <!-- Explicação do benefício -->
+
+            </div>
+
+        </article>
+
+
+        <article class="beneficio">
+            <!-- Terceiro benefício -->
+
+            <div class="beneficio-icone">🏅</div>
+            <!-- Ícone representando garantia -->
+
+            <div>
+                <h3>Garantia</h3>
+                <!-- Título do benefício -->
+
+                <p>Produtos com garantia e procedência.</p>
+                <!-- Explicação do benefício -->
+
+            </div>
+
+        </article>
+
+
+        <article class="beneficio">
+            <!-- Quarto benefício -->
+
+            <div class="beneficio-icone">🎧</div>
+            <!-- Ícone representando atendimento -->
+
+            <div>
+                <h3>Suporte</h3>
+                <!-- Título do benefício -->
+
+                <p>Atendimento rápido e especializado.</p>
+                <!-- Explicação do benefício -->
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- PRODUTOS                                              -->
+    <!-- ===================================================== -->
+
+    <section class="secao-produtos" id="produtos">
+        <!-- Cria a seção principal onde os produtos serão exibidos -->
+
+        <div class="titulo-secao">
+            <!-- Agrupa o título da seção -->
+
+            <h2>NOSSOS <span>PRODUTOS</span></h2>
+            <!-- Título principal; a palavra PRODUTOS recebe uma cor diferente -->
+
+            <div class="linha-titulo"></div>
+            <!-- Cria uma pequena linha decorativa abaixo do título -->
+
+        </div>
+
+
+        <div class="grade-produtos">
+            <!-- Cria uma grade moderna para organizar os produtos -->
+
+
+            <!-- ================= PRODUTO 1 ================= -->
+
+            <article class="card-produto">
+                <!-- Cria um cartão individual para o primeiro produto -->
+
+                <div class="imagem-produto">
+                    <!-- Área onde a imagem do produto será exibida -->
+
+                    <img src="notebookgamer.png" alt="Notebook Gamer">
+                    <!-- Imagem do notebook gamer -->
+
+                </div>
+
                 <h3>Notebook Gamer</h3>
-                <p>Descrição do produto aqui.</p>
-                <p>R$ 0.000,00</p>
-            </td>
+                <!-- Nome do produto -->
 
-            <td align="center" width="33%">
-                <!-- Coloque aqui a imagem do produto -->
-                <br>
-                <img src="monitor.png" alt="Monitor" width="150" height="150">
+                <p>Desempenho máximo para jogos e produtividade.</p>
+                <!-- Descrição resumida -->
+
+                <div class="rodape-produto">
+                    <!-- Agrupa o preço e o botão -->
+
+                    <strong>R$ 0.000,00</strong>
+                    <!-- Preço do produto -->
+
+                    <button class="botao-carrinho">🛒</button>
+                    <!-- Botão visual para futura implementação de carrinho -->
+
+                </div>
+
+            </article>
+
+
+            <!-- ================= PRODUTO 2 ================= -->
+
+            <article class="card-produto">
+
+                <div class="imagem-produto">
+
+                    <img src="monitor.png" alt="Monitor 24 polegadas">
+                    <!-- Imagem do monitor -->
+
+                </div>
+
                 <h3>Monitor 24"</h3>
-                <p>Descrição do produto aqui.</p>
-                <p>R$ 0.000,00</p>
-            </td>
 
-            <td align="center" width="33%">
-                <!-- Coloque aqui a imagem do produto -->
-                <br>
-                <!-- <img src="img/teclado.jpg" alt="Teclado" width="150"> -->
+                <p>Imagens nítidas e cores vibrantes.</p>
+
+                <div class="rodape-produto">
+
+                    <strong>R$ 0.000,00</strong>
+
+                    <button class="botao-carrinho">🛒</button>
+
+                </div>
+
+            </article>
+
+
+            <!-- ================= PRODUTO 3 ================= -->
+
+            <article class="card-produto">
+
+                <div class="imagem-produto imagem-vazia">
+                    <!-- Área temporária enquanto você não adiciona uma imagem -->
+
+                    ⌨️
+                    <!-- Ícone temporário representando um teclado -->
+
+                    <!--
+                    Quando tiver uma imagem, substitua o ícone acima por:
+
+                    <img src="teclado.png" alt="Teclado Mecânico">
+                    -->
+
+                </div>
+
                 <h3>Teclado Mecânico</h3>
-                <p>Descrição do produto aqui.</p>
-                <p>R$ 0.000,00</p>
-            </td>
-        </tr>
 
-        <!-- LINHA 2 -->
-        <tr>
-            <td align="center" width="33%">
-                <!-- Coloque aqui a imagem do produto -->
-                <br>
-                <!-- <img src="img/mouse.jpg" alt="Mouse" width="150"> -->
-                <h3>Mouse sem fio</h3>
-                <p>Descrição do produto aqui.</p>
-                <p>R$ 0.000,00</p>
-            </td>
+                <p>Precisão e durabilidade para seu setup.</p>
 
-            <td align="center" width="33%">
-                <!-- Coloque aqui a imagem do produto -->
-                <br>
-                <!-- <img src="img/ssd.jpg" alt="SSD" width="150"> -->
+                <div class="rodape-produto">
+
+                    <strong>R$ 0.000,00</strong>
+
+                    <button class="botao-carrinho">🛒</button>
+
+                </div>
+
+            </article>
+
+
+            <!-- ================= PRODUTO 4 ================= -->
+
+            <article class="card-produto">
+
+                <div class="imagem-produto imagem-vazia">
+
+                    🖱️
+
+                    <!--
+                    Futuramente você pode utilizar:
+
+                    <img src="mouse.png" alt="Mouse sem fio">
+                    -->
+
+                </div>
+
+                <h3>Mouse Sem Fio</h3>
+
+                <p>Mais liberdade e precisão no seu dia a dia.</p>
+
+                <div class="rodape-produto">
+
+                    <strong>R$ 0.000,00</strong>
+
+                    <button class="botao-carrinho">🛒</button>
+
+                </div>
+
+            </article>
+
+
+            <!-- ================= PRODUTO 5 ================= -->
+
+            <article class="card-produto">
+
+                <div class="imagem-produto imagem-vazia">
+
+                    💾
+
+                    <!--
+                    Futuramente você pode utilizar:
+
+                    <img src="ssd.png" alt="SSD 1TB">
+                    -->
+
+                </div>
+
                 <h3>SSD 1TB</h3>
-                <p>Descrição do produto aqui.</p>
-                <p>R$ 0.000,00</p>
-            </td>
 
-            <td align="center" width="33%">
-                <!-- Coloque aqui a imagem do produto -->
-                <br>
-                <!-- <img src="img/headset.jpg" alt="Headset" width="150"> -->
+                <p>Velocidade e desempenho para seus arquivos.</p>
+
+                <div class="rodape-produto">
+
+                    <strong>R$ 0.000,00</strong>
+
+                    <button class="botao-carrinho">🛒</button>
+
+                </div>
+
+            </article>
+
+
+            <!-- ================= PRODUTO 6 ================= -->
+
+            <article class="card-produto">
+
+                <div class="imagem-produto imagem-vazia">
+
+                    🎧
+
+                    <!--
+                    Futuramente você pode utilizar:
+
+                    <img src="headset.png" alt="Headset Gamer">
+                    -->
+
+                </div>
+
                 <h3>Headset Gamer</h3>
-                <p>Descrição do produto aqui.</p>
-                <p>R$ 0.000,00</p>
-            </td>
-        </tr>
 
-    </table>
+                <p>Som imersivo para uma experiência completa.</p>
 
+                <div class="rodape-produto">
 
-    <!-- ============================================================ -->
-    <!-- SOBRE                                                         -->
-    <!-- ============================================================ -->
-    <h2 id="sobre">Sobre a loja</h2>
-    <p>Escreva aqui um texto sobre a TechStore.</p>
+                    <strong>R$ 0.000,00</strong>
 
+                    <button class="botao-carrinho">🛒</button>
 
-    <!-- ============================================================ -->
-    <!-- CONTATO                                                       -->
-    <!-- ============================================================ -->
-    <h2 id="contato">Contato</h2>
-    <p>Escreva aqui as formas de contato da TechStore (WhatsApp, e-mail, endereço).</p>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
 
 
-    <!-- ============================================================ -->
-    <!-- RODAPÉ (personalize à vontade)                               -->
-    <!-- ============================================================ -->
-    <table border="1" width="100%" cellpadding="12">
-        <tr>
-            <td align="center">
-                 <img src="foot.png" alt="Rodapé da TechStore" width="100%" height="180">
-            </td>
-        </tr>
+    <!-- ===================================================== -->
+    <!-- INFORMAÇÕES DA EMPRESA                                -->
+    <!-- ===================================================== -->
 
-    </table>
+    <section class="informacoes">
+
+        <!-- ================= SOBRE ================= -->
+
+        <article class="info-card" id="sobre">
+
+            <div class="info-icone">🏪</div>
+            <!-- Ícone representando a empresa -->
+
+            <div>
+
+                <h3>SOBRE A LOJA</h3>
+
+                <p>
+                    A TechStore é referência em produtos de informática
+                    e eletrônicos, trazendo as melhores opções para você
+                    com qualidade e confiança.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- ================= ATENDIMENTO ================= -->
+
+        <article class="info-card">
+
+            <div class="info-icone">📱</div>
+            <!-- Ícone representando atendimento digital -->
+
+            <div>
+
+                <h3>ATENDIMENTO</h3>
+
+                <p>
+                    Fale conosco pelo WhatsApp, e-mail ou visite nossa loja.
+                    Estamos prontos para ajudar!
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- ================= CONTATO ================= -->
+
+        <article class="info-card" id="contato">
+
+            <div class="info-icone">✉️</div>
+            <!-- Ícone representando contato -->
+
+            <div>
+
+                <h3>CONTATO</h3>
+
+                <p>💬 (43) 99925-9899</p>
+
+                <p>✉ contato@techstore.com.br</p>
+
+                <p>📍 Av. Serra das Lobas, 1345 - Londrina PR</p>
+
+            </div>
+
+        </article>
+
+    </section>
+
+</main>
+
+
+<!-- ========================================================= -->
+<!-- RODAPÉ                                                    -->
+<!-- ========================================================= -->
+
+<footer class="rodape">
+    <!-- Cria a área inferior da página -->
+
+    <div class="rodape-texto">
+
+        <p>© 2026 TechStore — Informática e Eletrônicos</p>
+        <!-- Informação de direitos e nome da empresa -->
+
+        <p>
+            Av. Serra das Lobas, 1345 - Londrina PR -
+            (43) 99925-9899 - contato@techstore.com.br
+        </p>
+        <!-- Informações resumidas de localização e contato -->
+
+    </div>
+
+    <div class="redes-sociais">
+        <!-- Agrupa os botões das redes sociais -->
+
+        <a href="#" aria-label="Instagram">◎</a>
+        <!-- Botão para futura inclusão do link do Instagram -->
+
+        <a href="#" aria-label="Facebook">f</a>
+        <!-- Botão para futura inclusão do link do Facebook -->
+
+        <a href="https://wa.me/5543999259899" aria-label="WhatsApp">◉</a>
+        <!-- Botão que direciona para o WhatsApp -->
+
+    </div>
+
+</footer>
 
 </body>
+<!-- Finaliza todo o conteúdo visível -->
+
 </html>
+<!-- Finaliza o documento HTML -->
