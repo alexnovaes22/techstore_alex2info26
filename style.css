@@ -1,599 +1,217 @@
-/* ========================================================= /
-/ CONFIGURAÇÕES GERAIS DA PÁGINA                            /
-/ ========================================================= */
+/* =============================================================
+   TECHSTORE - style.css
+   Cada linha tem um comentário dizendo o que ela faz.
+   Não gostou de algo? Apague a linha (ou troque o valor) e veja
+   o que muda. Dica: depois de salvar, aperte Ctrl + F5.
+   ============================================================= */
 
-/* O símbolo * seleciona todos os elementos da página */
 
-{
-box-sizing: border-box; /* Faz largura e altura incluírem bordas e espaçamentos /
-margin: 0; / Remove margens automáticas dos elementos /
-padding: 0; / Remove espaçamentos internos automáticos */
-}
+/* -------------------------------------------------------------
+   0. FONTES
+   ------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@600;700&display=swap"); /* baixa duas fontes do Google Fonts: Barlow (textos) e Barlow Condensed (títulos, parecida com a letra do banner) */
 
-/* Configura o comportamento da rolagem da página /
-html {
-scroll-behavior: smooth; / Faz os links do menu rolarem suavemente até as seções */
-}
 
-/* Configura todo o corpo principal da página /
+/* -------------------------------------------------------------
+   1. PÁGINA INTEIRA
+   ------------------------------------------------------------- */
 body {
-font-family: Arial, Helvetica, sans-serif; / Define as fontes utilizadas /
-background: #020817; / Define um fundo azul quase preto /
-color: #ffffff; / Define branco como cor padrão dos textos /
-line-height: 1.6; / Aumenta o espaço entre linhas para melhorar a leitura */
+  font-family: "Barlow", Arial, sans-serif;   /* fonte dos textos; se a Barlow não carregar, usa Arial */
+  background-color: #f4f3f8;                  /* cor de fundo da página (cinza bem claro, quase branco) */
+  color: #2a2640;                             /* cor padrão de todo o texto (grafite escuro, mais suave que o preto puro) */
+  margin: 0;                                  /* tira a margem branca que o navegador coloca em volta da página */
+  line-height: 1.6;                           /* espaço entre as linhas do texto, facilita a leitura */
 }
 
-/* ========================================================= /
-/ CABEÇALHO                                                 /
-/ ========================================================= */
-
-/* Configura a barra superior da loja /
-.topo {
-width: 100%; / Faz o cabeçalho ocupar toda a largura /
-min-height: 85px; / Define uma altura mínima para o cabeçalho /
-background: rgba(2, 8, 23, 0.95); / Cria fundo escuro com leve transparência /
-display: flex; / Coloca os elementos lado a lado /
-align-items: center; / Centraliza verticalmente os elementos /
-justify-content: space-between; / Distribui os elementos pela largura /
-padding: 15px 7%; / Cria espaço interno nas laterais e acima/abaixo /
-border-bottom: 1px solid #162a4d; / Adiciona uma linha discreta abaixo /
-position: sticky; / Mantém o menu no topo durante a rolagem /
-top: 0; / Define que o elemento ficará preso no topo /
-z-index: 1000; / Garante que o cabeçalho fique acima dos outros elementos */
+img {
+  max-width: 100%;                            /* nenhuma imagem passa da largura da tela (importante no celular) */
+  display: block;                             /* imagem vira um bloco, isso remove um espacinho estranho embaixo dela */
+  margin: 0 auto;                             /* centraliza a imagem na horizontal */
 }
 
-/* Agrupa o ícone e os textos da marca /
-.logo {
-display: flex; / Coloca o ícone e o texto lado a lado /
-align-items: center; / Centraliza verticalmente os itens /
-gap: 10px; / Cria espaço entre o ícone e o texto */
-}
-
-/* Configura o ícone principal da loja /
-.logo-icone {
-font-size: 32px; / Aumenta o tamanho do ícone /
-color: #1683ff; / Define uma cor azul tecnológica */
-}
-
-/* Configura o nome principal da empresa /
-.logo h1 {
-font-size: 28px; / Define o tamanho do nome da loja /
-line-height: 1; / Reduz o espaço vertical do título /
-letter-spacing: 1px; / Cria um pequeno espaço entre as letras */
-}
-
-/* Configura apenas a palavra STORE dentro do nome /
-.logo h1 span {
-color: #3d7cff; / Destaca a palavra STORE em azul */
-}
-
-/* Configura o subtítulo da empresa /
-.logo p {
-font-size: 10px; / Define um tamanho menor para o subtítulo /
-color: #b8c5dc; / Utiliza um cinza azulado /
-letter-spacing: 1px; / Cria mais espaço entre as letras */
-}
-
-/* ========================================================= /
-/ MENU DE NAVEGAÇÃO                                         /
-/ ========================================================= */
-
-/* Organiza os links do menu /
-.menu {
-display: flex; / Coloca os links lado a lado /
-gap: 35px; / Cria espaço entre os links */
-}
-
-/* Configura cada link do menu /
-.menu a {
-color: #ffffff; / Define a cor branca para os links /
-text-decoration: none; / Remove o sublinhado padrão /
-font-size: 15px; / Define o tamanho do texto /
-transition: 0.3s; / Cria uma animação suave quando houver interação */
-}
-
-/* Altera o link quando o usuário passa o mouse /
-.menu a {
-color: #1683ff; / Muda a cor para azul */
-}
-
-/* Configura o botão do WhatsApp no topo /
-.whatsapp-topo {
-color: #ffffff; / Define a cor branca do texto /
-text-decoration: none; / Remove o sublinhado /
-border: 1px solid #00d67a; / Cria uma borda verde /
-border-radius: 10px; / Arredonda os cantos /
-padding: 10px 18px; / Cria espaço interno /
-transition: 0.3s; / Cria uma animação suave */
-}
-
-/* Altera o botão do WhatsApp ao passar o mouse /
-.whatsapp-topo {
-background: #00b968; / Adiciona fundo verde /
-transform: translateY(-2px); / Move o botão levemente para cima */
-}
-
-/* ========================================================= /
-/ BANNER PRINCIPAL                                          /
-/ ========================================================= */
-
-/* Configura a área principal de destaque /
-.hero {
-min-height: 500px; / Define uma altura mínima /
-display: grid; / Utiliza um sistema moderno de organização /
-grid-template-columns: 1fr 1fr; / Divide o espaço em duas colunas iguais /
-align-items: center; / Centraliza os elementos verticalmente /
-gap: 30px; / Cria espaço entre texto e imagem /
-padding: 50px 7%; / Cria espaçamento interno /
-background:
-radial-gradient(circle at 80% 30%, rgba(55, 70, 255, 0.25), transparent 35%),
-linear-gradient(135deg, #020817, #07152c); / Cria o fundo tecnológico em degradê */
-}
-
-/* Configura o pequeno texto de destaque /
-.hero-destaque {
-color: #ffffff; / Define a cor branca /
-font-size: 22px; / Define o tamanho /
-font-weight: bold; / Deixa o texto em negrito /
-letter-spacing: 2px; / Aumenta o espaço entre as letras */
-}
-
-/* Configura o título principal /
-.hero h2 {
-font-size: clamp(42px, 5vw, 76px); / Faz o tamanho se adaptar ao tamanho da tela /
-line-height: 1.05; / Aproxima as linhas do título /
-margin: 10px 0 25px; / Cria espaços externos */
-}
-
-/* Destaca parte do título principal /
-.hero h2 span {
-background: linear-gradient(90deg, #1683ff, #8d63ff); / Cria um degradê azul e roxo /
--webkit-background-clip: text; / Faz o degradê aparecer apenas dentro do texto /
--webkit-text-fill-color: transparent; / Remove a cor normal para mostrar o degradê */
-}
-
-/* Configura o texto descritivo /
-.hero-descricao {
-color: #c6d2e3; / Define uma cor clara menos intensa /
-font-size: 18px; / Define o tamanho da fonte /
-max-width: 550px; / Limita a largura para facilitar a leitura /
-margin-bottom: 30px; / Cria espaço abaixo do texto */
-}
-
-/* Configura o botão principal /
-.botao-principal {
-display: inline-block; / Permite aplicar tamanho e espaçamento como um botão /
-background: linear-gradient(135deg, #1683ff, #0056d6); / Cria um fundo azul em degradê /
-color: #ffffff; / Define a cor branca do texto /
-text-decoration: none; / Remove o sublinhado /
-padding: 14px 24px; / Cria espaço interno /
-border-radius: 10px; / Arredonda os cantos /
-font-weight: bold; / Deixa o texto mais destacado /
-box-shadow: 0 10px 25px rgba(0, 91, 255, 0.25); / Adiciona uma sombra azul /
-transition: 0.3s; / Cria uma animação suave */
-}
-
-/* Cria um efeito quando o mouse passa sobre o botão /
-.botao-principal {
-transform: translateY(-3px); / Move o botão levemente para cima /
-box-shadow: 0 15px 30px rgba(0, 91, 255, 0.45); / Aumenta a sombra */
-}
-
-/* Organiza a imagem do banner /
-.hero-imagem {
-display: flex; / Permite centralizar a imagem /
-justify-content: center; / Centraliza horizontalmente /
-align-items: center; / Centraliza verticalmente */
-}
-
-/* Configura a imagem principal /
-.hero-imagem img {
-width: 100%; / Faz a imagem ocupar o espaço disponível /
-max-width: 650px; / Impede que fique grande demais /
-max-height: 430px; / Limita a altura /
-object-fit: contain; / Mantém a proporção sem cortar /
-filter: drop-shadow(0 25px 30px rgba(0, 0, 0, 0.45)); / Cria uma sombra moderna */
-}
-
-/* ========================================================= /
-/ BENEFÍCIOS                                                /
-/ ========================================================= */
-
-/* Cria a faixa que contém os benefícios /
-.beneficios {
-width: 88%; / Define uma largura menor que a página /
-max-width: 1300px; / Impede que fique excessivamente larga /
-margin: -25px auto 70px; / Move levemente a seção para cima e cria espaço abaixo /
-display: grid; / Utiliza uma grade /
-grid-template-columns: repeat(4, 1fr); / Cria quatro colunas iguais /
-background: #081426; / Define o fundo escuro /
-border: 1px solid #183150; / Adiciona uma borda discreta /
-border-radius: 18px; / Arredonda os cantos /
-overflow: hidden; / Impede que conteúdos ultrapassem os cantos arredondados /
-position: relative; / Permite controlar a posição da seção /
-z-index: 2; / Mantém a seção acima de elementos do fundo */
-}
-
-/* Configura cada benefício individual /
-.beneficio {
-display: flex; / Coloca ícone e texto lado a lado /
-align-items: center; / Centraliza verticalmente /
-gap: 15px; / Cria espaço entre o ícone e o texto /
-padding: 25px; / Cria espaço interno /
-border-right: 1px solid #1a304d; / Cria separação entre os benefícios */
-}
-
-/* Remove a borda do último benefício /
-.beneficio {
-border-right: none; / Evita uma linha desnecessária no final */
-}
-
-/* Configura os ícones dos benefícios /
-.beneficio-icone {
-font-size: 35px; / Aumenta o tamanho do ícone */
-}
-
-/* Configura os títulos dos benefícios /
-.beneficio h3 {
-font-size: 16px; / Define o tamanho do título /
-margin-bottom: 4px; / Cria pequeno espaço abaixo */
-}
-
-/* Configura os textos dos benefícios /
-.beneficio p {
-color: #aebbd0; / Utiliza uma cor menos intensa /
-font-size: 13px; / Define um tamanho menor */
-}
-
-/* ========================================================= /
-/ SEÇÃO DE PRODUTOS                                         /
-/ ========================================================= */
-
-/* Configura toda a seção de produtos /
-.secao-produtos {
-width: 88%; / Define a largura da área /
-max-width: 1300px; / Limita a largura máxima /
-margin: auto; / Centraliza a seção /
-padding-bottom: 70px; / Cria espaço abaixo */
-}
-
-/* Centraliza o título da seção /
-.titulo-secao {
-text-align: center; / Centraliza o conteúdo /
-margin-bottom: 35px; / Cria espaço antes dos produtos */
-}
-
-/* Configura o título /
-.titulo-secao h2 {
-font-size: 30px; / Define o tamanho */
-}
-
-/* Destaca uma palavra do título /
-.titulo-secao h2 span {
-color: #287cff; / Define a cor azul */
-}
-
-/* Cria a linha decorativa abaixo do título /
-.linha-titulo {
-width: 90px; / Define a largura /
-height: 3px; / Define a espessura /
-background: #287cff; / Define a cor azul /
-margin: 12px auto; / Centraliza e cria espaço /
-border-radius: 10px; / Arredonda a linha */
-}
-
-/* Cria a grade dos produtos /
-.grade-produtos {
-display: grid; / Ativa o sistema de grade /
-grid-template-columns: repeat(3, 1fr); / Cria três colunas /
-gap: 16px; / Cria espaço entre os cartões */
-}
-
-/* Configura cada cartão de produto /
-.card-produto {
-background: linear-gradient(145deg, #09182b, #061222); / Cria um fundo em degradê escuro /
-border: 1px solid #193454; / Adiciona uma borda azul discreta /
-border-radius: 15px; / Arredonda os cantos /
-padding: 18px; / Cria espaço interno /
-min-height: 360px; / Mantém cartões com altura semelhante /
-display: flex; / Ativa o sistema flexível /
-flex-direction: column; / Organiza os conteúdos verticalmente /
-transition: 0.3s; / Cria uma animação suave */
-}
-
-/* Cria efeito ao passar o mouse sobre o produto /
-.card-produto {
-transform: translateY(-7px); / Move o cartão para cima /
-border-color: #287cff; / Destaca a borda em azul /
-box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35); / Adiciona uma sombra */
-}
-
-/* Configura a área das imagens /
-.imagem-produto {
-height: 190px; / Define uma altura fixa /
-display: flex; / Permite centralizar o conteúdo /
-align-items: center; / Centraliza verticalmente /
-justify-content: center; / Centraliza horizontalmente /
-margin-bottom: 15px; / Cria espaço abaixo da imagem */
-}
-
-/* Configura as imagens reais dos produtos /
-.imagem-produto img {
-width: 100%; / Permite que a imagem utilize a largura disponível /
-height: 100%; / Permite que a imagem utilize a altura disponível /
-object-fit: contain; / Mantém a proporção sem cortar */
-}
-
-/* Configura os espaços temporários de imagens /
-.imagem-vazia {
-font-size: 90px; / Aumenta o tamanho do ícone temporário /
-background: radial-gradient(circle, #10284a, transparent 70%); / Cria um fundo decorativo */
-}
-
-/* Configura o nome do produto /
-.card-produto h3 {
-font-size: 20px; / Define o tamanho /
-margin-bottom: 6px; / Cria espaço abaixo */
-}
-
-/* Configura a descrição /
-.card-produto p {
-color: #aab9cf; / Define uma cor clara e discreta /
-font-size: 15px; / Define o tamanho */
-}
-
-/* Organiza a área inferior do cartão /
-.rodape-produto {
-margin-top: auto; / Empurra esta área para o final do cartão /
-display: flex; / Coloca preço e botão lado a lado /
-align-items: center; / Centraliza verticalmente /
-justify-content: space-between; / Coloca cada elemento em um lado /
-padding-top: 18px; / Cria espaço acima */
-}
-
-/* Configura o preço /
-.rodape-produto strong {
-color: #2580ff; / Define a cor azul para destacar o preço /
-font-size: 18px; / Define o tamanho */
-}
-
-/* Configura o botão do carrinho /
-.botao-carrinho {
-width: 42px; / Define a largura /
-height: 42px; / Define a altura /
-border: none; / Remove a borda padrão /
-border-radius: 10px; / Arredonda os cantos /
-background: linear-gradient(135deg, #1683ff, #0059db); / Cria fundo azul /
-color: #ffffff; / Define a cor branca /
-font-size: 19px; / Define o tamanho do ícone /
-cursor: pointer; / Mostra uma mão quando o mouse passa sobre o botão /
-transition: 0.3s; / Cria animação suave */
-}
-
-/* Cria efeito sobre o botão do carrinho /
-.botao-carrinho {
-transform: scale(1.08); / Aumenta levemente o botão */
-}
-
-/* ========================================================= /
-/ INFORMAÇÕES DA LOJA                                       /
-/ ========================================================= */
-
-/* Cria a grade das informações inferiores /
-.informacoes {
-width: 88%; / Define a largura /
-max-width: 1300px; / Limita a largura máxima /
-margin: 0 auto 60px; / Centraliza e cria espaço abaixo /
-display: grid; / Ativa o sistema de grade /
-grid-template-columns: repeat(3, 1fr); / Cria três colunas /
-gap: 16px; / Cria espaço entre os cartões */
-}
-
-/* Configura cada cartão de informação /
-.info-card {
-background: linear-gradient(145deg, #09182b, #061222); / Define o fundo escuro /
-border: 1px solid #193454; / Adiciona uma borda discreta /
-border-radius: 15px; / Arredonda os cantos /
-padding: 25px; / Cria espaço interno /
-display: flex; / Coloca ícone e texto lado a lado /
-gap: 18px; / Cria espaço entre os elementos */
-}
-
-/* Configura os ícones das informações /
-.info-icone {
-font-size: 40px; / Define um tamanho grande para os ícones */
-}
-
-/* Configura os títulos /
-.info-card h3 {
-color: #287cff; / Define a cor azul /
-font-size: 17px; / Define o tamanho /
-margin-bottom: 10px; / Cria espaço abaixo */
-}
 
-/* Configura os parágrafos /
-.info-card p {
-color: #c1ccdc; / Define uma cor clara /
-font-size: 14px; / Define o tamanho /
-margin-bottom: 5px; / Cria espaço entre os parágrafos */
+/* -------------------------------------------------------------
+   2. TABELAS EM GERAL (tira o visual de planilha)
+   ------------------------------------------------------------- */
+table {
+  border: none;                               /* remove a borda externa que vem do border="1" */
+  border-collapse: collapse;                  /* junta as bordas das células numa só */
 }
 
-/* ========================================================= /
-/ RODAPÉ                                                     /
-/ ========================================================= */
-
-/* Configura o rodapé principal /
-.rodape {
-background: #020611; / Define um fundo ainda mais escuro /
-border-top: 1px solid #162a4d; / Cria uma linha de separação /
-padding: 25px 7%; / Cria espaço interno /
-display: flex; / Coloca texto e redes sociais lado a lado /
-align-items: center; / Centraliza verticalmente /
-justify-content: space-between; / Distribui os elementos /
-gap: 25px; / Cria espaço entre os grupos */
+td {
+  border: none;                               /* remove a borda de cada célula */
 }
 
-/* Configura os textos do rodapé /
-.rodape-texto {
-color: #aebbd0; / Define uma cor menos intensa /
-font-size: 14px; / Define o tamanho */
-}
-
-/* Cria espaço entre as linhas /
-.rodape-texto p {
-margin: 4px 0; / Cria pequena margem acima e abaixo */
-}
 
-/* Organiza os links das redes sociais /
-.redes-sociais {
-display: flex; / Coloca os ícones lado a lado /
-gap: 12px; / Cria espaço entre os ícones */
+/* -------------------------------------------------------------
+   3. BANNER (1ª tabela da página)
+   ------------------------------------------------------------- */
+table:nth-of-type(1) td {
+  padding: 0;                                 /* tira o espaço em volta do banner, ele encosta nas bordas da tela */
+  background-color: #16034a;                  /* faixa escura atrás do título, continua a cor do banner */
 }
 
-/* Configura cada botão social /
-.redes-sociais a {
-width: 45px; / Define a largura /
-height: 45px; / Define a altura /
-border: 1px solid #526078; / Adiciona uma borda /
-border-radius: 50%; / Transforma o botão em um círculo /
-display: flex; / Permite centralizar o conteúdo /
-align-items: center; / Centraliza verticalmente /
-justify-content: center; / Centraliza horizontalmente /
-color: #ffffff; / Define a cor branca /
-text-decoration: none; / Remove sublinhado /
-font-size: 20px; / Define o tamanho do símbolo /
-transition: 0.3s; / Cria animação */
+table:nth-of-type(1) img {
+  width: 100%;                                /* banner ocupa toda a largura */
+  height: auto;                               /* altura acompanha a largura, a imagem não fica esticada */
 }
 
-/* Cria efeito quando o mouse passa sobre as redes sociais /
-.redes-sociais a {
-background: #1683ff; / Adiciona fundo azul /
-border-color: #1683ff; / Altera a cor da borda */
+h1 {
+  font-family: "Barlow Condensed", Arial, sans-serif; /* fonte estreita, combina com a letra do banner */
+  font-size: 2.6rem;                          /* tamanho do título TechStore */
+  letter-spacing: 1px;                        /* afasta um pouco as letras */
+  color: #ffffff;                             /* título em branco puro */
+  margin: 24px 0 0;                           /* espaço acima do título */
 }
 
-/* ========================================================= /
-/ RESPONSIVIDADE PARA TABLETS                                /
-/ ========================================================= */
-
-/* Estas regras são aplicadas em telas menores que 950 pixels */
-@media (max-width: 950px) {
-
-.topo {
-    flex-wrap: wrap; /* Permite que os elementos desçam para outra linha */
-    gap: 15px; /* Cria espaço entre os elementos */
+h1 + p {
+  color: #f4a6c6;                             /* frase "Informática e Eletrônicos" em rosa (mesma cor dos triângulos do banner) */
+  margin: 0 0 20px;                           /* aproxima a frase do título e dá espaço embaixo */
+  font-size: 1.1rem;                          /* frase um pouco maior que o texto normal */
 }
 
-.menu {
-    order: 3; /* Move o menu para uma posição posterior */
-    width: 100%; /* Faz o menu ocupar toda a largura */
-    justify-content: center; /* Centraliza os links */
-}
 
-.hero {
-    grid-template-columns: 1fr; /* Coloca texto e imagem um abaixo do outro */
-    text-align: center; /* Centraliza os textos */
+/* -------------------------------------------------------------
+   4. MENU (2ª tabela da página)
+   ------------------------------------------------------------- */
+table:nth-of-type(2) {
+  position: sticky;                           /* o menu "gruda" no topo da tela quando a página rola */
+  top: 0;                                     /* gruda exatamente no topo */
+  z-index: 10;                                /* fica por cima das outras coisas ao rolar */
+  background-color: #ffffff;                  /* menu em faixa branca, separa o topo escuro do conteúdo */
+  box-shadow: 0 2px 10px rgba(22, 3, 74, 0.08); /* sombra leve embaixo do menu, dá sensação de "flutuar" */
 }
 
-.hero-texto {
-    display: flex; /* Ativa o sistema flexível */
-    flex-direction: column; /* Organiza os elementos verticalmente */
-    align-items: center; /* Centraliza os elementos */
+table:nth-of-type(2) td {
+  padding: 12px;                              /* altura da faixa do menu */
+  color: #cfcbe0;                             /* cor das barrinhas | entre os links (cinza claro, discretas) */
 }
 
-.beneficios {
-    grid-template-columns: repeat(2, 1fr); /* Organiza os benefícios em duas colunas */
+a {
+  color: #16034a;                             /* cor dos links (azul-marinho da marca) */
+  text-decoration: none;                      /* tira o sublinhado */
+  font-weight: 600;                           /* links em seminegrito */
+  padding: 6px 14px;                          /* área em volta do link, fica mais fácil de clicar */
+  border-radius: 20px;                        /* arredonda os cantos (formato de pílula no hover) */
+  transition: background-color 0.2s, color 0.2s; /* a troca de cor acontece suave, em 0,2 segundo */
 }
 
-.beneficio:nth-child(2) {
-    border-right: none; /* Remove a borda lateral do segundo item */
+a:hover {
+  background-color: #e8457c;                  /* ao passar o mouse, aparece um fundo rosa forte */
+  color: #ffffff;                             /* e o texto do link fica branco */
 }
 
-.grade-produtos {
-    grid-template-columns: repeat(2, 1fr); /* Organiza os produtos em duas colunas */
-}
 
-.informacoes {
-    grid-template-columns: 1fr; /* Coloca os cartões um abaixo do outro */
+/* -------------------------------------------------------------
+   5. TÍTULOS DAS SEÇÕES (Nossos Produtos, Sobre, Contato)
+   ------------------------------------------------------------- */
+h2 {
+  font-family: "Barlow Condensed", Arial, sans-serif; /* mesma fonte do título principal */
+  font-size: 2rem;                            /* tamanho dos títulos de seção */
+  color: #16034a;                             /* títulos em azul-marinho da marca */
+  max-width: 1100px;                          /* largura máxima, alinha com a área dos produtos */
+  margin: 48px auto 8px;                      /* espaço em cima, centraliza o bloco e pouco espaço embaixo */
+  padding: 0 20px 0 16px;                     /* afasta o texto da borda da tela (resolve o "Nossos" cortado) */
+  border-left: 5px solid #e8457c;             /* barrinha rosa à esquerda do título */
 }
 
+h2 ~ p {
+  max-width: 1100px;                          /* parágrafos do Sobre e do Contato com a mesma largura dos títulos */
+  margin: 0 auto;                             /* centraliza o bloco de texto */
+  padding: 0 20px 0 21px;                     /* alinha o texto com o título (5px da barrinha + 16px) */
 }
 
-/* ========================================================= /
-/ RESPONSIVIDADE PARA CELULARES                              /
-/ ========================================================= */
 
-/* Estas regras são aplicadas em telas menores que 600 pixels */
-@media (max-width: 600px) {
-
-.topo {
-    padding: 15px 5%; /* Reduz o espaço interno */
-    justify-content: center; /* Centraliza os elementos */
-}
-
-.logo {
-    width: 100%; /* Faz a logo ocupar toda a largura */
-    justify-content: center; /* Centraliza a logo */
+/* -------------------------------------------------------------
+   6. PRODUTOS (a tabela que vem logo depois do h2)
+   ------------------------------------------------------------- */
+h2 + table {
+  border-collapse: separate;                  /* separa as células para elas virarem "cartões" */
+  border-spacing: 20px;                       /* espaço entre um cartão e outro */
+  max-width: 1140px;                          /* largura máxima da vitrine em telas grandes */
+  margin: 0 auto;                             /* centraliza a vitrine */
 }
 
-.menu {
-    gap: 15px; /* Reduz o espaço entre os links */
-    flex-wrap: wrap; /* Permite que os links passem para outra linha */
+h2 + table td {
+  background-color: #ffffff;                  /* fundo branco do cartão, destaca do fundo cinza da página */
+  border: 1px solid #e4e1ee;                  /* borda fina e clara do cartão */
+  border-radius: 16px;                        /* cantos arredondados */
+  padding: 20px;                              /* espaço interno do cartão */
+  vertical-align: top;                        /* conteúdo começa no topo, mesmo se um cartão tiver mais texto */
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; /* animação suave do efeito de hover */
 }
 
-.whatsapp-topo {
-    width: 100%; /* Faz o botão ocupar toda a largura */
-    text-align: center; /* Centraliza o texto */
+h2 + table td:hover {
+  transform: translateY(-6px);                /* o cartão "sobe" 6px ao passar o mouse */
+  border-color: #e8457c;                      /* e a borda fica rosa */
+  box-shadow: 0 10px 24px rgba(22, 3, 74, 0.12); /* e ganha uma sombra, como se saísse da página */
 }
 
-.hero {
-    padding: 50px 6%; /* Ajusta o espaçamento interno */
+h2 + table img {
+  width: 150px;                               /* largura da foto do produto */
+  height: 150px;                              /* altura da foto do produto */
+  object-fit: contain;                        /* a foto cabe inteira no quadrado, sem distorcer */
+  border-radius: 12px;                        /* cantos arredondados da foto */
 }
 
-.hero h2 {
-    font-size: 40px; /* Reduz o tamanho do título */
+h2 + table br {
+  display: none;                              /* esconde o <br> vazio que fica antes da imagem */
 }
 
-.hero-destaque {
-    font-size: 17px; /* Reduz o tamanho do destaque */
+h3 {
+  font-family: "Barlow Condensed", Arial, sans-serif; /* nome do produto na fonte dos títulos */
+  font-size: 1.4rem;                          /* tamanho do nome do produto */
+  color: #16034a;                             /* nome em azul-marinho */
+  margin: 16px 0 4px;                         /* espaço acima e abaixo do nome */
 }
 
-.beneficios {
-    width: 90%; /* Ajusta a largura */
-    grid-template-columns: 1fr; /* Coloca um benefício por linha */
+h2 + table td p {
+  margin: 4px 0;                              /* aproxima os parágrafos dentro do cartão */
+  color: #6e6987;                             /* descrição em cinza, menos destaque que o nome */
 }
 
-.beneficio {
-    border-right: none; /* Remove bordas laterais */
-    border-bottom: 1px solid #1a304d; /* Cria separação horizontal */
+h2 + table td p:last-child {
+  font-size: 1.5rem;                          /* preço grande (é o último parágrafo do cartão) */
+  font-weight: 600;                           /* preço em seminegrito */
+  color: #e8457c;                             /* preço em rosa forte, para chamar atenção */
+  margin-top: 12px;                           /* afasta o preço da descrição */
 }
 
-.beneficio:last-child {
-    border-bottom: none; /* Remove a borda do último item */
-}
 
-.secao-produtos {
-    width: 90%; /* Ajusta a largura da seção */
+/* -------------------------------------------------------------
+   7. RODAPÉ (última tabela da página)
+   ------------------------------------------------------------- */
+table:last-of-type {
+  margin-top: 56px;                           /* espaço entre o Contato e o rodapé */
 }
 
-.grade-produtos {
-    grid-template-columns: 1fr; /* Coloca um produto por linha */
+table:last-of-type td {
+  padding: 0;                                 /* rodapé encosta nas bordas, igual ao banner */
 }
 
-.card-produto {
-    min-height: 340px; /* Ajusta a altura mínima */
+table:last-of-type img {
+  width: 100%;                                /* rodapé ocupa toda a largura */
+  height: auto;                               /* corrige a imagem esticada pelo height="180" do HTML */
 }
 
-.informacoes {
-    width: 90%; /* Ajusta a largura */
-}
 
-.info-card {
-    flex-direction: column; /* Coloca ícone e texto um abaixo do outro */
-}
+/* -------------------------------------------------------------
+   8. CELULAR (telas com até 700px de largura)
+   ------------------------------------------------------------- */
+@media (max-width: 700px) {
+  h2 + table,
+  h2 + table tbody,
+  h2 + table tr,
+  h2 + table td {
+    display: block;                           /* no celular, a tabela deixa de ser tabela: um cartão embaixo do outro */
+    width: auto;                              /* ignora o width="33%" do HTML */
+  }
 
-.rodape {
-    flex-direction: column; /* Coloca os elementos do rodapé verticalmente */
-    text-align: center; /* Centraliza os textos */
-}
+  h2 + table td {
+    margin: 0 16px 16px;                      /* espaço em volta de cada cartão no celular */
+  }
 
+  a {
+    padding: 6px 8px;                         /* links do menu mais compactos para caber na tela */
+  }
 }
